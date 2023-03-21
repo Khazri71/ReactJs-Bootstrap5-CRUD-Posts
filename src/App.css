@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+/*Variables*/
+:root {
+  --main-background-color: #ccc;
+  --main-color-one: #f2c12e;
+  --main-color-two: #008f8c;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*All*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*Selection*/
+::selection {
+  background-color: #008f8c;
+  color: #fff;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*Scrollbar*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #eef4fa;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #008f8c;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-corner {
+  background-color: #eef4fa;
+}
+.loading-overlay {
   display: flex;
-  flex-direction: column;
+  background: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9998;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+main .snake-loading {
+  width: 300px;
+  max-height: 200px;
+  margin: 40px auto 100px;
+  position: relative;
+}
+main .snake-loading span {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: var(--main-color-one);
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0 60px;
+  border-radius: 50%;
+  -webkit-animation: snake-move 0.8s ease-in-out infinite alternate;
+  animation: snake-move 0.8s ease-in-out infinite alternate;
+}
+main .snake-loading span:first-child {
+  left: 20px;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+main .snake-loading span:nth-child(2) {
+  left: 50px;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+main .snake-loading span:nth-child(3) {
+  left: 80px;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+main .snake-loading span:nth-child(4) {
+  left: 110px;
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+main .snake-loading span:last-child {
+  left: 140px;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+/*Animation*/
+@-webkit-keyframes snake-move {
   from {
-    transform: rotate(0deg);
+    top: 0;
+    background-color: var(--main-color-two);
+    opacity: 1;
   }
   to {
-    transform: rotate(360deg);
+    top: 30px;
+    background-color: var(--main-color-one);
+    opacity: 0.6;
+  }
+}
+@keyframes snake-move {
+  from {
+    top: 0;
+    background-color: var(--main-color-two);
+    opacity: 1;
+  }
+  to {
+    top: 30px;
+    background-color: var(--main-color-one);
+    opacity: 0.6;
   }
 }

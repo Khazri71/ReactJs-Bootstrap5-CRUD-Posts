@@ -1,0 +1,21 @@
+--NOTES--
+--> API : Random Images From Unsplash :<--
+        <img
+          width={300}
+          height={400}
+          src="https://source.unsplash.com/random/?fruits"
+        />
+
+
+--ROADMAP--
+1- Install Bootstrap5
+2- Create Folder Posts
+3- Navigation Bar With BrowserRouter - Routes - Route (path - element) - Link to
+3- Show All Posts
+4- Show More Info Of One Post By Id
+5- Edit And Update One Post By Id
+6- Delete One Post By Id 
+7- Search Posts
+8- Add Waiting Loading
+9- Add Sweet Alert 2
+10- Use API Random Images From Unsplash
